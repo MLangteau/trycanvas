@@ -10,7 +10,9 @@
                 @foreach($upcomingEvents as $upcomingEvent)
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-heading">{{$upcomingEvent->title}}</h3>
+                            <h3 class="panel-heading">
+                                <a href="{{route('event-view', $upcomingEvent->id)}}">{{$upcomingEvent->id}} {{$upcomingEvent->title}}</a>
+                            </h3>
                             <small class="padding-left-10">{{$upcomingEvent->address}}</small>
                         </div>
                         <div class="panel-body">
@@ -19,7 +21,7 @@
                                 <br>
                                 <strong>End date:</strong>{{$upcomingEvent->end_date}}
                                 <br>
-                                <strong>Created by:</strong>{{$upcomingEvent->creator->name}}
+                                <strong>Created by:</strong><a href="">{{$upcomingEvent->creator->name}}</a>
                                 <br>
                             </div>
                             <div class="description">
@@ -42,7 +44,9 @@
                 @foreach($pastEvents as $pastEvent)
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-heading">{{$pastEvent->title}}</h3>
+                            <h3 class="panel-heading">
+                                <a href="{{route('event-view', $pastEvent->id)}}">{{$pastEvent->id}} {{$pastEvent->title}}</a>
+                            </h3>
                             <small class="padding-left-10">{{$pastEvent->address}}</small>
                         </div>
                         <div class="panel-body">
@@ -51,7 +55,7 @@
                                 <br>
                                 <strong>End date:</strong>{{$pastEvent->end_date}}
                                 <br>
-                                <strong>Created by:</strong>{{$pastEvent->creator->name}}
+                                <strong>Created by:</strong><a href="">{{$pastEvent->creator->name}}</a>
                                 <br>
                             </div>
                             <div class="description">

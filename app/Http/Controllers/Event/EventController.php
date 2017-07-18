@@ -24,4 +24,10 @@ class EventController extends Controller
 
         return view('event.event-list',compact('upcomingEvents','pastEvents'));
     }
+
+    public function view(Event $event)
+    {
+        return view ('event.event-view')
+            ->with('event', $event);
+    }
 }
